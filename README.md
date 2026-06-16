@@ -23,17 +23,21 @@
 - Cognition
   - Group_differences_in_cognition.m：Assesses behavioral phenotype differences among the three groups across multiple cognitive domains, controlling for key demographic and scanning site covariates.
 - Clinical
-  - Group_differences_in_clinical_10metrics.m
-  - Biotype_differences_in_clinical_3metrics.m
+  - Group_differences_in_clinical_10metrics.m:Assesses group-level differences in 10 shared clinical and metabolic metrics across all three groups using covariate-adjusted linear models.
+  - Biotype_differences_in_clinical_3metrics.m:Evaluates biotype-specific differences in patient-only clinical metrics (Duration, HOMA2B, HOMA2IR) using covariate-adjusted linear models.
 
 **5. Phenotype_analysis**
-- Brain_deviation_cognition_PLSC.m
-- Brain_deviation_clinical_PLSC.m
+- Brain_deviation_cognition_PLSC.m : Performs Partial Least Squares Correlation (PLSC) analysis to identify multivariate coupling patterns between regional brain deviations and cognitive metrics within specific T2DM biotypes. The framework evaluates the statistical significance of latent variables via permutation testing and calculates Bootstrap Ratios (BSR) through resampling to identify stable brain-behavior associations.
+  
+- Brain_deviation_clinical_PLSC.m:Utilizes PLSC to map multivariate associations between brain deviation patterns and clinical/metabolic profiles, incorporating permutation tests for overall significance and bootstrapping for feature reliability.
 
 **6. Gene_analysis**
-- Brain_deviation_gene_PLSR.m
+- Brain_deviation_gene_PLSR.m:Performs Partial Least Squares Regression (PLSR) to associate biotype-specific spatial patterns of brain deviation with transcriptomic profiles. The script rigorously validates spatial significance using spin tests and assesses individual gene weight stability via bootstrap resampling, outputting Z-scored ranked gene lists.
+- The clusterProfiler R package was utilized to perform Gene Set Enrichment Analysis (GSEA) on the ranked gene lists.
 
 **Spintest**
+- Generate_SpinTest_Permutations.m:Generates spatially constrained null models by performing spherical rotations of the cortical surface parcellation. 
+- Map_SpinTest_To_Parcels.m:Maps the vertex-level spatial permutations into ROI space to construct the empirical null distribution of brain deviation scores.
 
 ## Data
 
