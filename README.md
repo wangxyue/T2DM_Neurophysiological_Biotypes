@@ -1,6 +1,7 @@
 # T2DM_Neurophysiological_Biotypes
 ## Overview
 
+
 ## Code
 **1. MIND_network**
 - run_MIND.py: Calculates the Morphometric INverse Divergence (MIND) network.
