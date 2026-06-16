@@ -11,17 +11,17 @@
 - Regional deviation scores relative to the established normative model were calculated using the out-of-sample estimation framework (Bethlehem et al., 2022).
 
 **3. Biotyping**
-- S1_T2DM_Biotyping_NbClust.r
-- S2_Cluster_stability_analysis.m
-- S3_plot_brain_deviation_map.m
+- S1_T2DM_Biotyping_NbClust.r : Applies K-means clustering to the deviation score matrix, utilizing the NbClust package to determine the optimal number of T2DM biotypes via comprehensive index voting.
+- S2_Cluster_stability_analysis.m : Performs a resampling-based stability analysis across k=2 to 10 (1,000 iterations) to evaluate the robustness of the clustering solutions.
+- S3_plot_brain_deviation_map.m: Plots the biotype-specific brain deviation maps.
 
 **4. Case_control_analysis**
 - Deviations
-  - S1_global_analysis.m
-  - S2_Economo7_analysis.m
-  - S3_ROI_analysis.m
+  - S1_global_analysis.m : Conducts case-control comparisons of global deviation scores among bioype 1, biotype 2, and healthy controls (HC).
+  - S2_Economo7_analysis.m : Evaluates group-level differences in deviation scores across the seven von Economo cytoarchitectonic classes.
+  - S3_ROI_analysis.m : Performs ROI-level statistical analyses to identify localized brain deviation differences among the three groups.
 - Cognition
-  - Group_differences_in_cognition.m
+  - Group_differences_in_cognition.m：Assesses behavioral phenotype differences among the three groups across multiple cognitive domains, controlling for key demographic and scanning site covariates.
 - Clinical
   - Group_differences_in_clinical_10metrics.m
   - Biotype_differences_in_clinical_3metrics.m
