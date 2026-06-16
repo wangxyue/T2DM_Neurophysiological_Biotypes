@@ -13,7 +13,7 @@
 - Regional deviation scores relative to the established normative model were calculated using the out-of-sample estimation framework (https://github.com/brainchart/Lifespan) [3].
 
 **3. Biotyping**
-- S1_T2DM_Biotyping_NbClust.r: Applies K-means clustering to the deviation score matrix, utilizing the NbClust package [4] to determine the optimal number of T2DM biotypes via comprehensive index voting.
+- S1_T2DM_Biotyping_NbClust.r: Applies K-means clustering to the deviation score matrix, utilizing the NbClust package (https://www.rdocumentation.org/packages/NbClust/versions/3.0.1/topics/NbClust) [4] to determine the optimal number of T2DM biotypes via comprehensive index voting.
   
 - S2_Cluster_stability_analysis.m: Performs a resampling-based stability analysis across k=2 to 10 (1,000 iterations) to evaluate the robustness of the clustering solutions.
   
@@ -23,7 +23,7 @@
 - Deviations
   - S1_global_analysis.m: Conducts case-control comparisons of global deviation scores among bioype 1, biotype 2, and healthy controls (HC).
     
-  - S2_Economo7_analysis.m: Evaluates group-level differences in deviation scores across the seven von Economo cytoarchitectonic classes.
+  - S2_Economo7_analysis.m: Evaluates group-level differences in deviation scores across the seven von Economo cytoarchitectonic classes [5].
     
   - S3_ROI_analysis.m: Performs ROI-level statistical analyses to identify localized brain deviation differences among the three groups.
     
@@ -40,22 +40,28 @@
 - Brain_deviation_clinical_PLSC.m: Utilizes PLSC to map multivariate associations between brain deviation patterns and clinical/metabolic profiles, incorporating permutation tests for overall significance and bootstrapping for feature reliability.
 
 **6. Gene_analysis**
-- The Allen Human Brain Atlas (AHBA) datasets [5] were preprocessed using the abagen toolbox (https://github.com/rmarkello/abagen) [6].
+- The Allen Human Brain Atlas (AHBA) datasets (https://human.brain-map.org/static/download) [6] were preprocessed using the abagen toolbox (https://github.com/rmarkello/abagen) [7].
   
 - Brain_deviation_gene_PLSR.m: Performs Partial Least Squares Regression (PLSR) to associate biotype-specific spatial patterns of brain deviation with transcriptomic profiles. The script rigorously validates spatial significance using spin tests and assesses individual gene weight stability via bootstrap resampling, outputting Z-scored ranked gene lists.
   
-- The clusterProfiler R package [7] was utilized to perform gene set enrichment analysis [8] on the ranked gene lists.
+- The clusterProfiler R package (https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html) [8] was utilized to perform gene set enrichment analysis [9] on the ranked gene lists.
   
-- The canonical cell classes data was used to perform cell-type enrichment analysis (https://github.com/jms290/PolySyn_MSNs/tree/master/Data) [9].
+- The canonical cell classes data (https://github.com/jms290/PolySyn_MSNs/tree/master/Data) [10] was used to perform cell-type enrichment analysis.
 
 **Spintest**
 
-Spin-based spatial permutation test [10]:
+Spin-based spatial permutation test [11]:
 - Generate_SpinTest_Permutations.m: Generates spatially constrained null models by performing spherical rotations of the cortical surface parcellation.
   
 - Map_SpinTest_To_Parcels.m: Maps the vertex-level spatial permutations into ROI space to construct the empirical null distribution of brain deviation scores.
 
 ## Data
+
+1. The spatial distribution maps of the mean brain deviation scores for T2DM biotypes: Biotype1_mean_deviation.mat, Biotype2_mean_deviation.mat
+   
+2. The mapping index assigning each ROI to one of the seven von Economo cytoarchitectonic classes: parcel_to_Economo.mat
+   
+3. The cortical sensorimotor-association (S-A) axis mapped onto the custom DK318 atlas: SAaxis_318_grad.mat
 
 ## References
 [1] Sebenius, Isaac, et al. "Robust estimation of cortical similarity networks from brain MRI." Nature neuroscience 26.8 (2023): 1461-1471.
@@ -66,14 +72,16 @@ Spin-based spatial permutation test [10]:
 
 [4] Charrad, Malika, et al. "NbClust: an R package for determining the relevant number of clusters in a data set." Journal of statistical software 61 (2014): 1-36.
 
-[5] Hawrylycz, Michael J., et al. "An anatomically comprehensive atlas of the adult human brain transcriptome." Nature 489.7416 (2012): 391-399.
+[5] von Economo, Constantin Freiherr, and Georg N. Koskinas. Die cytoarchitektonik der hirnrinde des erwachsenen menschen. J. Springer, 1925.
 
-[6] Markello, Ross D., et al. "Standardizing workflows in imaging transcriptomics with the abagen toolbox." elife 10 (2021): e72129.
+[6] Hawrylycz, Michael J., et al. "An anatomically comprehensive atlas of the adult human brain transcriptome." Nature 489.7416 (2012): 391-399.
 
-[7] Yu, Guangchuang, et al. "clusterProfiler: an R package for comparing biological themes among gene clusters." Omics: a journal of integrative biology 16.5 (2012): 284-287.
+[7] Markello, Ross D., et al. "Standardizing workflows in imaging transcriptomics with the abagen toolbox." elife 10 (2021): e72129.
 
-[8] Subramanian, Aravind, et al. "Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles." Proceedings of the national academy of sciences 102.43 (2005): 15545-15550.
+[8] Yu, Guangchuang, et al. "clusterProfiler: an R package for comparing biological themes among gene clusters." Omics: a journal of integrative biology 16.5 (2012): 284-287.
 
-[9] Seidlitz, Jakob, et al. "Transcriptomic and cellular decoding of regional brain vulnerability to neurogenetic disorders." Nature communications 11.1 (2020): 3358.
+[9] Subramanian, Aravind, et al. "Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles." Proceedings of the national academy of sciences 102.43 (2005): 15545-15550.
 
-[10] Alexander-Bloch, Aaron F., et al. "On testing for spatial correspondence between maps of human brain structure and function." Neuroimage 178 (2018): 540-551.
+[10] Seidlitz, Jakob, et al. "Transcriptomic and cellular decoding of regional brain vulnerability to neurogenetic disorders." Nature communications 11.1 (2020): 3358.
+
+[11] Alexander-Bloch, Aaron F., et al. "On testing for spatial correspondence between maps of human brain structure and function." Neuroimage 178 (2018): 540-551.
