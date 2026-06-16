@@ -72,7 +72,7 @@ Spin-based spatial permutation test [11]:
    
 2. The mapping index assigning each ROI to one of the seven von Economo cytoarchitectonic classes: parcel_to_Economo.mat
    
-3. The cortical sensorimotor-association (S-A) axis mapped onto the custom DK318 atlas: SAaxis_318_grad.mat
+3. The cortical sensorimotor-association (S-A) axis mapped onto the custom DK318 atlas using the neuromaps toolbox ((https://github.com/netneurolab/neuromaps)): SAaxis_318_grad.mat
 
 ## References
 [1] Sebenius, Isaac, et al. "Robust estimation of cortical similarity networks from brain MRI." Nature neuroscience 26.8 (2023): 1461-1471.
