@@ -56,6 +56,16 @@ Spin-based spatial permutation test [11]:
   
 - Map_SpinTest_To_Parcels.m: Maps the vertex-level spatial permutations into ROI space to construct the empirical null distribution of brain deviation scores.
 
+**Visualization**
+- MATLAB R2019b (https://www.mathworks.com/products/matlab.html)
+  
+- BrainNet Viewer toolbox v20170403 (https://www.nitrc.org/projects/bnv)
+
+- R v4.5.3 (https://www.rproject.org)
+  
+- ggplot2 package v4.0.3 (https://ggplot2.tidyverse.org/)
+
+
 ## Data
 
 1. The spatial distribution maps of the mean brain deviation scores for T2DM biotypes: Biotype1_mean_deviation.mat, Biotype2_mean_deviation.mat
